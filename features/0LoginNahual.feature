@@ -1,7 +1,6 @@
-Feature: Nahual Login
-In order login to my account 
-    As an
-        I want to online to save money
+Feature: As a Nahul user          
+        I want to loggin in the web page of nahual          
+        so I check that mi profile is available
 
 Scenario: Nahual Login
     Given I am on the Nahual homepage
