@@ -5,10 +5,10 @@ In order login to my account
 
 Scenario: Nahual Login
     Given I am on the Nahual homepage
-    And I click the Iniciar Sesión button
+    When I click the Iniciar Sesión button
     And I click on the Iniciar con Google button
-    And I add my email: calidad.nahual@yahoo.com
+    And I add my email
     And I click on the Siguiente button
-    And I add my password: calidad2021
-    When I click on the button Siguiente
+    And I add my password
+    And I click on the button Siguiente
     Then I should see the button Verificar Acceso

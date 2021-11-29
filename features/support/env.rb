@@ -4,6 +4,10 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
 
+#PTravel Settings
+ENV['EMAIL']="calidad.nahual@yahoo.com"
+ENV['PSW']="calidad2021"
+
 Capybara.default_driver = :selenium
 
 # Set the host the Capybara tests should be run against
