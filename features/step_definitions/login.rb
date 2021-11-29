@@ -19,14 +19,17 @@ Given('I click on the Siguiente button') do
 end
 
 Given('I add my password: calidad2021') do
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input").
-    xpathBase.set('calidad2021')
+    fill_in 'password', :with => 'calidad2021'
 end
 
 When('I click on the button Siguiente') do
     xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
 end
 
-Then('would be logged') do
-    puts('jajaj')
+Then('I should see the button Verificar Acceso') do
+    buttonLabel = find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button").text
+    if buttonLabel  != 'Verificar Acceso'
+        raise "Expected grand total does not match calculated grand total "
+    end
+    puts('Exito')
 end
