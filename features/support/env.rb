@@ -2,8 +2,7 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/cucumber'
-require 'capybara-screenshot/cucumber'
-
+require 'cucumber'
 #PTravel Settings
 ENV['EMAIL']="calidad.nahual@yahoo.com"
 ENV['PSW']="calidad2021"

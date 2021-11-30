@@ -31,5 +31,5 @@ Then('I should see the button Verificar Acceso') do
     if buttonLabel  != 'Verificar Acceso'
         raise "Expected grand total does not match calculated grand total "
     end
-    puts('Exito')
+    puts('Login Exitoso')
 end

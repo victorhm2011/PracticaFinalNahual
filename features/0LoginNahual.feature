@@ -1,6 +1,7 @@
 Feature: As a Nahul user          
         I want to loggin in the web page of nahual          
         so I check that mi profile is available
+Background
 
 Scenario: Nahual Login
     Given I am on the Nahual homepage
