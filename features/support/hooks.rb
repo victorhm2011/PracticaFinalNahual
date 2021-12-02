@@ -1,16 +1,15 @@
-Before '@login' do 
-    page.driver.browser.manage.window.maximize
-        visit 'https://nahual-argentina-develop.vercel.app/'
-    click_on ('Iniciar Sesión')
-    find(:xpath, "/html/body/div/div/div[2]/form/div/div/div/div/div[2]/div[2]/span/div/div/div/div/div/div/div/div/div/div/div[1]/a/div[2]").click
-    fill_in 'identifierId', :with => ENV['EMAIL']
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
-    fill_in 'password', :with => ENV['PSW']
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
-    buttonLabel = find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button").text
-    if buttonLabel  != 'Verificar Acceso'
-        raise "Expected grand total does not match calculated grand total "
-    end
-    puts('Exito')
+After '@egresadeRestoreData' do 
+        td = page.find(:css, 'div.ui.label.nombre', text: /#{'Jager Vargas Rejas'}/)
+        tr = td.find(:xpath, './parent::td/parent::tr') 
+        tr.find(:xpath,'./td[5]/a[1]/button').click
+        sleep(3) 
+        fill_in 'nombre', :with => "Sexto Grupo"
+        fill_in 'apellido', :with => "No Eliminar"
+        fill_in 'tipoDNI', :with => "DNI"	 
+        fill_in 'dni', :with => "1111111"
+        click_on('Confirmar')
+        sleep(3)
 end
+
+
 
