@@ -83,5 +83,5 @@ end
 
 Then('I can also see the topic in the table with the modification') do
     expect(page).to have_content(@topic)
-    sleep(3)
+    sleep(2)
 end
