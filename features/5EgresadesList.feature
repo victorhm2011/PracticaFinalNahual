@@ -3,7 +3,7 @@ Feature: As a Nahual user
         so I can check his information      
 
 Background:
-   Given I am on the Nahual homepage
+   Given I am on the Nahual intial page
    And I click the Iniciar Sesión button
    And I click on the Iniciar con Google button
    And I add my email

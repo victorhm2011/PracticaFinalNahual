@@ -1,10 +1,10 @@
-When('I click the button Cursos') do
+When('I click the Cursos button') do
     xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[1]/a[3]/a").click
 end
 
 #Scenario: Delete a course
 
-Given('I am on the Nahual Cursos page') do
+Given('I am on the Nahual Cursos') do
     puts 'I am on the Nahual Cursos page'
 end
 
