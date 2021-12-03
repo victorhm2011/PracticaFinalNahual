@@ -13,6 +13,7 @@ Background:
    And I click the button Verificar Acceso
    And I click the button Egresades
 
+@See
 Scenario: See an Alumne
     Given I am on the Nahual Egresades page
     When I click the button Ver of the user named "Sexto Grupo No Eliminar"

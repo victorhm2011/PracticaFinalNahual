@@ -1,39 +1,11 @@
+When('I click the button Cursos') do
+    xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[1]/a[3]/a").click
+end
+
 #Scenario: Delete a course
 
-Given("I am on the Nahual home page") do
-	page.driver.browser.manage.window.maximize
-        visit 'https://nahual-argentina-develop.vercel.app/'
-end
-
-When('I click the Iniciar Sesión button 1') do
-    click_on ('Iniciar Sesión')
-end
-  
-When('I click on the Iniciar con Google button 1') do
-    find(:xpath, "/html/body/div/div/div[2]/form/div/div/div/div/div[2]/div[2]/span/div/div/div/div/div/div/div/div/div/div/div[1]/a/div[2]").click
-end
-
-When('I add my email 1') do
-    fill_in 'identifierId', :with => ENV['EMAIL']
-end
-When('I click on the Siguiente button 1') do
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
-end
-
-When('I add my password 1') do
-    fill_in 'password', :with => ENV['PSW']
-end
-
-When('I click on the button Siguiente 1') do
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
-end
-
-When('I click the button Verificar Acceso 1') do
-    xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button").click
-end
-
-When('I click on the Cursos button') do
-    xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[1]/a[3]/a").click
+Given('I am on the Nahual Cursos page') do
+    puts 'I am on the Nahual Cursos page'
 end
 
 When('I click on Eliminar button of the first course in the course list') do
@@ -54,42 +26,6 @@ end
 
 #Scenario: See Inactive courses
 
-Given("I am on the Nahual home page 3") do
-	page.driver.browser.manage.window.maximize
-        visit 'https://nahual-argentina-develop.vercel.app/'
-end
-
-When('I click the Iniciar Sesión button 3') do
-    click_on ('Iniciar Sesión')
-end
-  
-When('I click on the Iniciar con Google button 3') do
-    find(:xpath, "/html/body/div/div/div[2]/form/div/div/div/div/div[2]/div[2]/span/div/div/div/div/div/div/div/div/div/div/div[1]/a/div[2]").click
-end
-
-When('I add my email 3') do
-    fill_in 'identifierId', :with => ENV['EMAIL']
-end
-When('I click on the Siguiente button 3') do
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
-end
-
-When('I add my password 3') do
-    fill_in 'password', :with => ENV['PSW']
-end
-
-When('I click on the button Siguiente 3') do
-    xpathBase= find(:xpath, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click
-end
-
-When('I click the button Verificar Acceso 3') do
-    xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[3]/div/div/div[2]/button").click
-end
-
-When('I click on the Cursos button 2') do
-    xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[1]/a[3]/a").click
-end
-
 When('I click on Active state menu') do
     xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[2]/div[4]/div/div[2]").click
 end
@@ -102,6 +38,56 @@ Then('I should see the inactive list and state') do
     state = find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[2]/div[4]/div/div[2]/div[1]").text
     if state != 'Inactivo'
         raise "Expected Inactivo state"
+    end
+    puts('Exito')
+end
+
+#Scenario: Create a course
+
+When('I click Nuevo Curso button form') do
+    xpathBase= find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[2]/div[4]/button").click
+end
+
+When('I enter the Period 1') do
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[2]/div/input").set "1"
+end
+
+When('I click Topico options') do
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[5]/div").click
+end
+
+When('I select the first Topico') do
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[5]/div/div[2]/div[1]").click
+end
+
+When('I click Sede - Nodo options') do
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[6]/div").click
+end
+
+When('I select the first Sede - Nodo') do
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[6]/div/div[2]/div[1]").click
+end
+
+When('I choose the schedule {string}') do |string|
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[7]/div/input").set string
+end
+
+When('I enter the profesor {string}') do |string|
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[8]/div/input").set string
+end
+
+When('I write notas {string}') do |string|
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[2]/form/div[9]/textarea").set string
+end
+
+When('I click confirmar button') do
+    xpathBase= find(:xpath,"/html/body/div[2]/div/div[3]/button[2]").click
+end
+
+Then('I should see a message of correct Curso creation') do
+    messageLabel = find(:xpath,"/html/body/div/div/div[2]/div/div/div").text
+    if messageLabel != 'Curso creado con éxito'
+        raise "Expected confirmation of creation"
     end
     puts('Exito')
 end
