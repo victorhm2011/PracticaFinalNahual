@@ -3,7 +3,7 @@ Feature: As a Nahul user
         so I check that mi profile is available
 
 Background:
-   Given I am on the Nahual homepage
+   Given I am on the Nahual intial page
    And I click the Iniciar Sesión button
    And I click on the Iniciar con Google button
    And I add my email
@@ -14,4 +14,8 @@ Background:
 Scenario: Validate Nahual Account
     Given I am on the Nahual verify page
     When I click the button Verificar Acceso
-    Then I should see the homepage
+    Then I should see the a welcome
+    And I should see the Home button at the left part of the page
+    And I should see the Egresades button at the left part of the page
+    And I should see the Cursos button at the left part of the page
+    And I should see the Empresas button at the left part of the page
