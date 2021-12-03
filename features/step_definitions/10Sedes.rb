@@ -1,5 +1,5 @@
 When('I click the button Sede+ of the Nodo {string}') do |string|
-    sleep(1)
+    sleep(3)
     div = page.find(:css, 'tbody > tr > td > div > div > div.column', text: /#{string}/)
     tr = div.find(:xpath, './parent::div/parent::div/parent::td/parent::tr') 
     tr.find(:xpath,'./td[1]/div/div/div[2]/button').click

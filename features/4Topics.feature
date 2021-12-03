@@ -2,7 +2,7 @@ Feature: As a Nahual user
         I want to have topics
         so I can divide better the courses
 Background:
-   Given I am on the Nahual homepage
+   Given I am on the Nahual intial page
    And I click the Iniciar Sesión button
    And I click on the Iniciar con Google button
    And I add my email
