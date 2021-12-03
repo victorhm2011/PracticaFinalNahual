@@ -18,10 +18,11 @@ Scenario: Edit multiple fields
     Given I am on the Nahual Egresades page
     When I click the button Editar of the user named "Sexto Grupo No Eliminar"
     And I edit the fields as show below
-        |Apellido       | Vargas Rejas |
         |Nombre         | Jager |
+        |Apellido       | Vargas Rejas |
         |Tipo Documentacion     | CI |
         |Documentacion  | 1235789 |        
     And I click in the Confirmar Button
-    Then I should see the data changed on the table
-    
+    Then I should see the list name "Lista Egresades" at the middle of the page
+    And Clicking on Ver button of the edited egresade
+    And I should see the data changed on the single card of the egresade    
